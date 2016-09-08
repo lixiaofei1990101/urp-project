@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lixf.urp.sys.dao.RoleDao">
+	<sql id="role__columns">
+		t.id as roleId,
+		t.name as roleName,
+		t.available as available,
+		t.belongoffice as belongoffice,
+		t.englishname as englishname,
+		t.roletype as roletype,
+		t.userid as userId,
+		t.createperson as createperson,
+		t.createdate as createdate,
+		t.remark as remark
+	</sql>
+	
+	<select id="queryRoleList" parameterType="Role" resultType="Role">
+		select <include refid="role__columns"></include> from sys_role t where 1=1
+		<if test="belongoffice != null and belongoffice != ''">
+			and belongoffice = #{belongoffice}
+		</if>
+		<if test="roleName != null and roleName != ''">
+			and name = #{roleName}
+		</if>
+		<if test="roletype != null and roletype != ''">
+			and roletype = #{roletype}
+		</if>
+		<if test="available != null and available != ''">
+			and available = #{available}
+		</if>
+	</select>
+	
+</mapper>
