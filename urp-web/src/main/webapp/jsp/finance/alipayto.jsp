@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>支付宝即时到账</title>
+<title>支付宝即时到账接口</title>
 </head>
 <%  
 	String htmlText=(String)request.getAttribute("htmlText");
