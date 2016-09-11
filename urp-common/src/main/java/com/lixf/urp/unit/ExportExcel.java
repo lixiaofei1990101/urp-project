@@ -20,7 +20,6 @@ public class ExportExcel {
     private static final int HEADER_ROW = 1;
     private static final int MAX_ROWS = 65535;
     private String data_format ="yyyy-MM-dd HH:mm:ss";
-    
     private String version;
     private String[] sheetNames = new String[]{"sheet"};
     private int cellWidth = 8000;
